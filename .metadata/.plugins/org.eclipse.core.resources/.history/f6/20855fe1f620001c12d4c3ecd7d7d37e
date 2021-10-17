@@ -1,0 +1,10 @@
+package com.learn.spring.jpa.entity;
+
+
+public class Guardian {
+
+	private String guardianName;
+	private String guardianEmail;
+	private String guardianMobile;
+	
+}

@@ -1,0 +1,23 @@
+package com.learn.spring.jpa.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class Teacher {
+
+	@Id
+	private Long teacherId;
+	private String firstName;
+	private String lastName;
+	
+}

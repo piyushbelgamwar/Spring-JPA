@@ -1,0 +1,5 @@
+package com.learn.spring.jpa.repository;
+
+public interface TeacherRepository {
+
+}

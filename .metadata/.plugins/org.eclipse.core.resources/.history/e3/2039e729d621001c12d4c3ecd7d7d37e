@@ -1,0 +1,23 @@
+package com.learn.spring.jpa;
+
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.learn.spring.jpa.entity.Course;
+import com.learn.spring.jpa.repository.CourseRepository;
+
+@SpringBootTest
+public class CourseRepositoryTest {
+	
+	@Autowired
+	private CourseRepository courseRepository;
+	
+	@Test
+	public void printCourse() {
+		List<Course> courses = 
+				courseRepository.findAll();
+	}
+}

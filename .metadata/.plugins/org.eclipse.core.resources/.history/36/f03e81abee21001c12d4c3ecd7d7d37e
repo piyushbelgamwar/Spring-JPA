@@ -1,0 +1,9 @@
+package com.learn.spring.jpa.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.learn.spring.jpa.entity.Teacher;
+
+public interface TeacherRepository extends JpaRepository<Teacher, Long> {
+
+}

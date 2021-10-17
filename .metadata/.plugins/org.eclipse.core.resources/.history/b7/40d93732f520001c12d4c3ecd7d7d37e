@@ -1,0 +1,32 @@
+package com.learn.spring.jpa;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.learn.spring.jpa.entity.Student;
+import com.learn.spring.jpa.repository.StudentRepository;
+
+@SpringBootTest
+//@DataJpaTest
+public class StudentRepositoryTest {
+	@Autowired
+	private StudentRepository studentRepository;
+	
+	@Test
+	public void saveStudent() {
+		
+		Student student =  Student.builder()
+				.emailId("piyush@gmail.com")
+				.firstName("piyush")
+				.lastName("Belgamwar")
+				.guardianName("Ram")
+				.guardianEmail("ram@gmail.com")
+				.guardianMobile("9878788756")
+				.build();
+		
+		
+	}
+	
+}

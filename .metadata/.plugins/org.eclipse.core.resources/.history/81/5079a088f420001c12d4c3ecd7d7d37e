@@ -1,0 +1,10 @@
+package com.learn.spring.jpa;
+
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+//@DataJpaTest
+public class StudentRepositoryTest {
+
+}
