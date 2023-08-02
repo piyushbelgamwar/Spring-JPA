@@ -1,43 +1,22 @@
-#!/bin/bash
+# Replace these paths with the actual paths to your Java 8 and Java 17 installations
+export JAVA8_HOME="/path/to/your/java8"
+export JAVA17_HOME="/path/to/your/java17"
 
-# Define the paths to your Java 8 and Java 17 installations
-JAVA_8_HOME="/path/to/your/java8/home"
-JAVA_17_HOME="/path/to/your/java17/home"
+# Add Java 8 and Java 17 to your PATH
+export PATH="$JAVA8_HOME/bin:$JAVA17_HOME/bin:$PATH"
 
-# Function to set Java home to Java 8
-set_java_8() {
-    export JAVA_HOME="$JAVA_8_HOME"
-    export PATH="$JAVA_HOME/bin:$PATH"
+# Set JAVA_HOME to Java 8 initially
+export JAVA_HOME="$JAVA8_HOME"
+
+# Function to switch between Java versions
+function switch_java() {
+  if [ "$1" == "8" ]; then
+    export JAVA_HOME="$JAVA8_HOME"
+    echo "Switched to Java 8"
+  elif [ "$1" == "17" ]; then
+    export JAVA_HOME="$JAVA17_HOME"
+    echo "Switched to Java 17"
+  else
+    echo "Invalid argument. Usage: switch_java [8|17]"
+  fi
 }
-
-# Function to set Java home to Java 17
-set_java_17() {
-    export JAVA_HOME="$JAVA_17_HOME"
-    export PATH="$JAVA_HOME/bin:$PATH"
-}
-
-# Usage message
-usage() {
-    echo "Usage: $0 {java8|java17}"
-}
-
-# Check the number of arguments
-if [ $# -ne 1 ]; then
-    usage
-    exit 1
-fi
-
-# Check the argument and set the appropriate Java version
-case "$1" in
-    java8)
-        set_java_8
-        ;;
-    java17)
-        set_java_17
-        ;;
-    *)
-        usage
-        exit 1
-        ;;
-esac
-
